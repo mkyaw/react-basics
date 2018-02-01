@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MUITestComponent from './components/MUITestComponent';
-import MUIInputComponent from './components/MUIInputComponent';
+import TestComponent from './components/MUI/TestComponent';
+import InputComponent from './components/MUI/InputComponent';
 
 import logo from './logo.svg';
 import './App.css';
@@ -30,11 +30,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <MuiThemeProvider>
-          <MUITestComponent />
+          <TestComponent />
         </MuiThemeProvider>
         <MuiThemeProvider>
           <div onChange={this.onTextInputChange}>
-          <MUIInputComponent input={this.state.input}/>
+          <InputComponent input={this.state.input}/>
           </div>
         </MuiThemeProvider>
       </div>

@@ -10,7 +10,7 @@ const styles = {
   },
 };
 
-export default class MUITestComponent extends React.Component {
+export default class TestComponent extends React.Component {
 
   constructor(props) {
     super(props);

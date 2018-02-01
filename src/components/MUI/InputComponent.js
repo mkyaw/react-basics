@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 
-const MUIInputComponent = ({input}) => {
+const InputComponent = ({input}) => {
   return (
     <div>
     <h1>Test Text Input: {input}</h1>
@@ -13,4 +13,4 @@ const MUIInputComponent = ({input}) => {
   );
 }
 
-export default MUIInputComponent;
+export default InputComponent;

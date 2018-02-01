@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MUITestComponent from './MUITestComponent';
-import MUIInputComponent from './MUIInputComponent';
+import MUITestComponent from './components/MUITestComponent';
+import MUIInputComponent from './components/MUIInputComponent';
 
 import logo from './logo.svg';
 import './App.css';

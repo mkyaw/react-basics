@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MUITestComponent from './MUITestComponent';
+import MUIInputComponent from './MUIInputComponent';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,11 +12,10 @@ class App extends Component {
     this.state = {
       input: '',
     };
-    this.onInputChange = this.onInputChange.bind(this);
+    this.onTextInputChange = this.onTextInputChange.bind(this);
   }
-  
-  onInputChange(evt) {
-    console.log(evt.target.value);
+
+  onTextInputChange(evt) {
     this.setState({input: evt.target.value});
   }
 
@@ -31,8 +32,11 @@ class App extends Component {
         <MuiThemeProvider>
           <MUITestComponent />
         </MuiThemeProvider>
-        <h1>Input Text: {this.state.input}</h1>
-        <input onChange={this.onInputChange} />
+        <MuiThemeProvider>
+          <div onChange={this.onTextInputChange}>
+          <MUIInputComponent input={this.state.input}/>
+          </div>
+        </MuiThemeProvider>
       </div>
     );
   }

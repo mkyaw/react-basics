@@ -5,6 +5,19 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+    };
+    this.onInputChange = this.onInputChange.bind(this);
+  }
+  
+  onInputChange(evt) {
+    console.log(evt.target.value);
+    this.setState({input: evt.target.value});
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,7 +31,8 @@ class App extends Component {
         <MuiThemeProvider>
           <MUITestComponent />
         </MuiThemeProvider>
-
+        <h1>Input Text: {this.state.input}</h1>
+        <input onChange={this.onInputChange} />
       </div>
     );
   }

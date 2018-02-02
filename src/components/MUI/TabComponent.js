@@ -1,6 +1,7 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import InputComponent from './InputComponent';
+import ListComponent from './ListComponent';
 
 const styles = {
   headline: {
@@ -40,12 +41,9 @@ export default class TabComponent extends React.Component {
         </Tab>
         
         {/* Tab #2 */}
-        <Tab label="Tab B" value="b">
+        <Tab label="List" value="list-tab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
-            <p>
-              Tab 2 content here.
-            </p>
+            <ListComponent />
           </div>
         </Tab>
         

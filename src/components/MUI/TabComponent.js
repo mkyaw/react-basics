@@ -2,6 +2,7 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import InputComponent from './InputComponent';
 import ListComponent from './ListComponent';
+import TableComponent from './TableComponent';
 
 const styles = {
   headline: {
@@ -43,17 +44,14 @@ export default class TabComponent extends React.Component {
         {/* List Component - Use the "users" props from App.js  */}
         <Tab label="List" value="list-tab">
           <div>
-            <ListComponent users={this.props.users}/>
+            <ListComponent users={this.props.users} />
           </div>
         </Tab>
         
         {/* Tab #3 */}
-        <Tab label="Tab C" value="c">
+        <Tab label="Table" value="table-tab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab C</h2>
-            <p>
-              Tab 3 content here.
-            </p>
+            <TableComponent users={this.props.users} />
           </div>
         </Tab>
       </Tabs>

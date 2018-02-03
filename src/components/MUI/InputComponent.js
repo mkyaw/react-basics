@@ -7,6 +7,7 @@ const InputComponent = ({input}) => {
         <h1>Test Text Input: {input}</h1>
         <TextField
           id="test-text-input"
+          value={input}
           hintText="Enter test text here"
         />
     </div>

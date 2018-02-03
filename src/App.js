@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
+      input: 'starter input - controlled component',
       users: [
                 {id: '001', name: 'myo', email: 'myo@gmail.com'}, 
                 {id: '002', name: 'john', email: 'john@gmail.com'}, 

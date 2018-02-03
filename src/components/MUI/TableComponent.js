@@ -22,9 +22,9 @@ const TableExampleSimple = (props) => (
       </TableRow>
     </TableHeader>
     <TableBody>
-        {props.users.map((user) => {
+        {props.users.map((user, index) => {
           return (
-            <TableRow key={user.key}>
+            <TableRow key={index}>
               <TableRowColumn>{user.id}</TableRowColumn>
               <TableRowColumn>{user.name}</TableRowColumn>
               <TableRowColumn>{user.email}</TableRowColumn>

@@ -12,9 +12,9 @@ class App extends Component {
     this.state = {
       input: '',
       users: [
-                {id: 0, name: 'myo', email: 'myo@gmail.com'}, 
-                {id: 1, name: 'john', email: 'john@gmail.com'}, 
-                {id: 2, name: 'jack', email: 'jack@gmail.com'}
+                {id: '001', name: 'myo', email: 'myo@gmail.com'}, 
+                {id: '002', name: 'john', email: 'john@gmail.com'}, 
+                {id: '003', name: 'jack', email: 'jack@gmail.com'}
               ]
     };
     this.onTextInputChange = this.onTextInputChange.bind(this);

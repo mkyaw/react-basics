@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TabComponent from './components/MUI/TabComponent';
+// import TestComponent from './components/TestComponent';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -9,6 +11,11 @@ class App extends Component {
     super(props);
     this.state = {
       input: '',
+      users: [
+                {id: 0, name: 'myo', email: 'myo@gmail.com'}, 
+                {id: 1, name: 'john', email: 'john@gmail.com'}, 
+                {id: 2, name: 'jack', email: 'jack@gmail.com'}
+              ]
     };
     this.onTextInputChange = this.onTextInputChange.bind(this);
   }
@@ -29,9 +36,16 @@ class App extends Component {
         </p>
         <MuiThemeProvider>
           <div onChange={this.onTextInputChange}>
-            <TabComponent input={this.state.input} />
+            <TabComponent input={this.state.input} users={this.state.users} />
           </div>
         </MuiThemeProvider>
+        
+        {/* TEST COMPONENT */}
+        {/*
+        <MuiThemeProvider>
+          <TestComponent users={this.state.users}/>
+        </MuiThemeProvider>
+        */}
       </div>
     );
   }

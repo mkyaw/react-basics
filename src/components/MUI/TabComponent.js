@@ -33,17 +33,17 @@ export default class TabComponent extends React.Component {
         value={this.state.value}
         onChange={this.handleChange}
       >
-        {/* Input Component - Pass the props passed from App.js */}
+        {/* Input Component - Use the "input" props passed from App.js */}
         <Tab label="Input" value="input-tab">
           <div>
             <InputComponent input={this.props.input} />
           </div>
         </Tab>
         
-        {/* Tab #2 */}
+        {/* List Component - Use the "users" props from App.js  */}
         <Tab label="List" value="list-tab">
           <div>
-            <ListComponent />
+            <ListComponent users={this.props.users}/>
           </div>
         </Tab>
         

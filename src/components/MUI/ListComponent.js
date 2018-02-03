@@ -1,27 +1,19 @@
 import React from 'react';
 import {List, ListItem} from 'material-ui/List';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-import ContentSend from 'material-ui/svg-icons/content/send';
-import ContentDrafts from 'material-ui/svg-icons/content/drafts';
+import {Face,} from 'material-ui-icons';
 import Divider from 'material-ui/Divider';
-import ActionInfo from 'material-ui/svg-icons/action/info';
 
-const ListComponent = () => (
+const ListComponent = (props) => (
   <div>
     <List>
-      <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-      <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />
-      <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
-      <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
-      <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-    </List>
-    <Divider />
-    <List>
-      <ListItem primaryText="All mail" rightIcon={<ActionInfo />} />
-      <ListItem primaryText="Trash" rightIcon={<ActionInfo />} />
-      <ListItem primaryText="Spam" rightIcon={<ActionInfo />} />
-      <ListItem primaryText="Follow up" rightIcon={<ActionInfo />} />
+      {props.users.map(user => {
+        return (
+          <div key={user.id}>
+            <ListItem primaryText={user.name} leftIcon={<Face />} secondaryText={user.email} />
+            <Divider />
+          </div>
+        )
+      })}
     </List>
   </div>
 );

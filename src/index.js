@@ -5,26 +5,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-const BasicNavbar = () => {
-  return (
-    <Router>
-        <div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-          </ul>
-
-          <hr />
-
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/blog" component={Blog} />
-        </div>
-    </Router>
-  );
-}
-
 const Home = () => (
   <div>
     <h2>Home</h2>
@@ -37,10 +17,50 @@ const About = () => (
   </div>
 )
 
-const Blog = () => (
+const Blogs = ({match}) => (
   <div>
-    <h2>Blog</h2>
+    <h2>Blogs</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>Different Types of Components</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/jsx`}>Write JSX like HTML</Link>
+      </li>
+    </ul>
+
+    <Route path={`${match.url}/:blogId`} component={Blog} />
+    <Route exact path={match.url} render = {() => (
+      <h3>Please select a blog.</h3>
+    )} />
   </div>
+)
+
+const Blog = ({match}) => (
+  <div>
+    <h3>{match.params.blogId}</h3>
+  </div>
+)
+
+const BasicNavbar = () => (
+  <Router>
+      <div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/blogs">Blogs</Link></li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/blogs" component={Blogs} />
+      </div>
+  </Router>
 )
 
 ReactDOM.render((

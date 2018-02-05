@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TabComponent from './components/MUI/TabComponent';
+
+// ** TEST COMPONENT
 // import TestComponent from './components/TestComponent';
 
 import logo from './logo.svg';

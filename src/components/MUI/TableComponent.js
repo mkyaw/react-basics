@@ -12,7 +12,7 @@ import {Face,Email, Assignment} from 'material-ui-icons';
 /**
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
-const TableExampleSimple = (props) => (
+const TableComponent = (props) => (
   <Table>
     <TableHeader>
       <TableRow>
@@ -35,4 +35,4 @@ const TableExampleSimple = (props) => (
   </Table>
 );
 
-export default TableExampleSimple;
+export default TableComponent;

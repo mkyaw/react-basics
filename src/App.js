@@ -18,7 +18,8 @@ class App extends Component {
                 {id: '001', name: 'myo', email: 'myo@gmail.com'}, 
                 {id: '002', name: 'john', email: 'john@gmail.com'}, 
                 {id: '003', name: 'jack', email: 'jack@gmail.com'}
-              ]
+              ],
+      dummyUsers: []
     };
     this.onTextInputChange = this.onTextInputChange.bind(this);
   }
@@ -28,8 +29,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(response => console.log(response));
+    axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(response => {
+        this.setState({dummyUsers: response.data});
+      });
   }
 
   render() {
@@ -44,7 +47,7 @@ class App extends Component {
         </p>
         <MuiThemeProvider>
           <div onChange={this.onTextInputChange}>
-            <TabComponent input={this.state.input} users={this.state.users} />
+            <TabComponent input={this.state.input} users={this.state.users} dummyUsers={this.state.dummyUsers} />
           </div>
         </MuiThemeProvider>
         

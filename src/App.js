@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TabComponent from './components/MUI/TabComponent';
+import axios from 'axios';
 
 // ** TEST COMPONENT
 // import TestComponent from './components/TestComponent';
@@ -24,6 +25,11 @@ class App extends Component {
 
   onTextInputChange(evt) {
     this.setState({input: evt.target.value});
+  }
+
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => console.log(response));
   }
 
   render() {
